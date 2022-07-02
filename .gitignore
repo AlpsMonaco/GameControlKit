@@ -104,3 +104,4 @@ Thumbs.db
 *.dll
 *.exe
 
+build-GameControlKit*

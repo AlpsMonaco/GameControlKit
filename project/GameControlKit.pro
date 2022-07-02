@@ -9,11 +9,17 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    keyboard.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    virtualcontroller.cpp \
+    xinputlistener.cpp
 
 HEADERS += \
-    mainwindow.h
+    keyboard.h \
+    mainwindow.h \
+    virtualcontroller.h \
+    xinputlistener.h
 
 FORMS += \
     mainwindow.ui
@@ -22,3 +28,14 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../third_party/ViGEmClient/lib/ -lViGEmClient
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../third_party/ViGEmClient/lib/ -lViGEmClientd
+
+INCLUDEPATH += $$PWD/../third_party/ViGEmClient/include
+DEPENDPATH += $$PWD/../third_party/ViGEmClient/include
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../third_party/ViGEmClient/lib/libViGEmClient.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../third_party/ViGEmClient/lib/libViGEmClientd.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../third_party/ViGEmClient/lib/ViGEmClient.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../third_party/ViGEmClient/lib/ViGEmClientd.lib

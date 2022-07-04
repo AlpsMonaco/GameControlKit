@@ -19,6 +19,7 @@ SOURCES += \
 HEADERS += \
     aboutwindow.h \
     keyboard.h \
+    logs.h \
     mainwindow.h \
     virtualcontroller.h \
     xinputlistener.h

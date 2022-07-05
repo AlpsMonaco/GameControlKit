@@ -32,7 +32,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>关于</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>

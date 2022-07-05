@@ -5,10 +5,10 @@
 
 int main(int argc, char* argv[])
 {
-    QSharedMemory shared("GameControlKit"); //随便填个名字就行
-    if (shared.attach())
+    QSharedMemory shared_momory("GameControlKit"); //随便填个名字就行
+    if (shared_momory.attach())
         return 0;
-    shared.create(1);
+    shared_momory.create(1);
 
     QApplication a(argc, argv);
     MainWindow w;

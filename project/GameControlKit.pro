@@ -11,14 +11,17 @@ CONFIG += c++17
 SOURCES += \
     aboutwindow.cpp \
     keyboard.cpp \
+    keyboardmonitorwidget.cpp \
     main.cpp \
     mainwindow.cpp \
     virtualcontroller.cpp \
     xinputlistener.cpp
 
 HEADERS += \
+    widgetkeeper.h \
     aboutwindow.h \
     keyboard.h \
+    keyboardmonitorwidget.h \
     logs.h \
     mainwindow.h \
     virtualcontroller.h \
@@ -26,6 +29,7 @@ HEADERS += \
 
 FORMS += \
     aboutwindow.ui \
+    keyboardmonitorwidget.ui \
     mainwindow.ui
 
 # Default rules for deployment.

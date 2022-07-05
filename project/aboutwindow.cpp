@@ -10,6 +10,5 @@ AboutWindow::AboutWindow(QWidget* parent) : QWidget(parent),
 
 AboutWindow::~AboutWindow()
 {
-    qDebug() << "destruct";
     delete ui;
 }

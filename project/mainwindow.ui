@@ -6,35 +6,112 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>350</width>
+    <height>280</height>
    </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
   </property>
   <property name="windowTitle">
    <string>Game Control Kit</string>
   </property>
-  <widget class="QWidget" name="central_widget_"/>
+  <widget class="QWidget" name="central_widget_">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="0">
+     <widget class="QPushButton" name="button_keyboard_value_">
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>监听键盘值</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="button_controller_value_">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>监听手柄值</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" rowspan="5">
+     <spacer name="horizontal_spacer_">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="button_open_">
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>打开</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="button_check_value_">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>查看键值表</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menu_bar_">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>350</width>
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu">
+   <widget class="QMenu" name="menu_">
     <property name="title">
      <string>菜单</string>
     </property>
+    <addaction name="action_open_"/>
     <addaction name="action_about_"/>
    </widget>
-   <addaction name="menu"/>
+   <addaction name="menu_"/>
   </widget>
   <widget class="QStatusBar" name="status_bar_"/>
   <action name="action_about_">
    <property name="text">
     <string>关于</string>
+   </property>
+  </action>
+  <action name="action_open_">
+   <property name="text">
+    <string>打开</string>
    </property>
   </action>
  </widget>

@@ -25,6 +25,7 @@ HEADERS += \
     logs.h \
     mainwindow.h \
     virtualcontroller.h \
+    widgetsingleton.h \
     xinputlistener.h
 
 FORMS += \

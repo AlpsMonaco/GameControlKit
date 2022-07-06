@@ -1,11 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "aboutwindow.h"
+#include "widgetsingleton.h"
 #include <QTableWidget>
 #include <QDropEvent>
 #include <QDragEnterEvent>
 #include <QMimeData>
 #include <QFileDialog>
+#include <QSettings>
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent),
@@ -67,7 +69,8 @@ void MainWindow::OpenFileDialog()
 
 void MainWindow::OpenKeyboardMonitor()
 {
-    auto widget = widget_keeper_.GetWidget<KeyboardMonitorWidget>(&widget_keeper_);
+
+    auto widget = WidgetSingleton::GetWidget<KeyboardMonitorWidget>();
     widget->showNormal();
     widget->activateWindow();
 }

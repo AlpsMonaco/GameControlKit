@@ -105,5 +105,4 @@ Thumbs.db
 *.exe
 
 build-GameControlKit*
-
-third_party/
+third_party/qt

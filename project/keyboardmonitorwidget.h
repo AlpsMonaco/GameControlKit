@@ -2,7 +2,7 @@
 #define KEYBOARDMONITORWIDGET_H
 
 #include <QWidget>
-#include "widgetkeeper.h"
+#include "widgetsingleton.h"
 
 namespace Ui
 {
@@ -14,8 +14,7 @@ class KeyboardMonitorWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit KeyboardMonitorWidget(WidgetKeeper* widget_keeper,
-                                   QWidget* parent = nullptr);
+    explicit KeyboardMonitorWidget(QWidget* parent = nullptr);
     ~KeyboardMonitorWidget();
 
 signals:
@@ -23,7 +22,7 @@ signals:
 
 private:
     Ui::KeyboardMonitorWidget* ui;
-    WidgetKeeper::Widget<KeyboardMonitorWidget> widget_;
+    WidgetSingleton::Item<KeyboardMonitorWidget> item_;
 };
 
 #endif // KEYBOARDMONITORWIDGET_H

@@ -3,9 +3,9 @@
 #include <QApplication>
 #include <QSharedMemory>
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-    QSharedMemory shared_memory("GameControlKit"); //随便填个名字就行
+    QSharedMemory shared_memory("GameControlKit");
     if (shared_memory.attach())
         return 0;
     shared_memory.create(1);

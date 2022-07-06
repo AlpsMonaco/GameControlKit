@@ -1,11 +1,9 @@
 #include "keyboardmonitorwidget.h"
 #include "ui_keyboardmonitorwidget.h"
 
-KeyboardMonitorWidget::KeyboardMonitorWidget(WidgetKeeper* widget_keeper,
-                                             QWidget* parent)
+KeyboardMonitorWidget::KeyboardMonitorWidget(QWidget* parent)
     : QWidget(parent),
-      ui(new Ui::KeyboardMonitorWidget),
-      widget_(widget_keeper)
+      ui(new Ui::KeyboardMonitorWidget)
 {
     ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);

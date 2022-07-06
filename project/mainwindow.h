@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include "keyboardmonitorwidget.h"
-#include "widgetkeeper.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -30,6 +29,5 @@ private slots:
 
 private:
     Ui::MainWindow* ui;
-    WidgetKeeper widget_keeper_;
 };
 #endif // MAINWINDOW_H

@@ -46,7 +46,7 @@ void VirtualController::Disconnect()
         vigem_target_remove(client_, target_);
 }
 
-VirtualControllerAllocator& VirtualControllerAllocator::Get()
+VirtualControllerAllocator &VirtualControllerAllocator::Get()
 {
     static VirtualControllerAllocator allocator;
     return allocator;

@@ -40,13 +40,13 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../third_party/ViGEmClient/lib/ -lViGEmClient
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../third_party/ViGEmClient/lib/ -lViGEmClientd
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../lib/ -lViGEmClient
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../lib/ -lViGEmClientd
 
 INCLUDEPATH += $$PWD/../third_party/ViGEmClient/include
 DEPENDPATH += $$PWD/../third_party/ViGEmClient/include
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../third_party/ViGEmClient/lib/libViGEmClient.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../third_party/ViGEmClient/lib/libViGEmClientd.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../third_party/ViGEmClient/lib/ViGEmClient.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../third_party/ViGEmClient/lib/ViGEmClientd.lib
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../lib/libViGEmClient.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../lib/libViGEmClientd.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../lib/ViGEmClient.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../lib/ViGEmClientd.lib

@@ -32,6 +32,8 @@ FORMS += \
     keyboardmonitorwidget.ui \
     mainwindow.ui
 
+CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

@@ -2,6 +2,7 @@
 #define WIDGETKEEPER_H
 
 #include <QWidget>
+#include <QDebug>
 #include <map>
 
 class WidgetKeeper

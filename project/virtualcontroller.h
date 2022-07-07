@@ -36,6 +36,6 @@ namespace controlkit
         PVIGEM_CLIENT client_;
         PVIGEM_TARGET target_;
     };
-}
+} // namespace controlkit
 
 #endif // __VIRTUALCONTROLLER_H

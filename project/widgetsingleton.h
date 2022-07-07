@@ -11,17 +11,17 @@ public:
     class Item
     {
     public:
-        explicit Item() { }
+        explicit Item() {}
         ~Item() { WidgetSingleton::Instance().OnDestroy(typeid(WidgetType).hash_code()); }
     };
 
-    ~WidgetSingleton() { }
+    ~WidgetSingleton() {}
 
     template <typename WidgetType, typename... Args>
     static WidgetType* GetWidget(Args&&... args)
     {
         auto& widget_map_ = Instance().widget_map_;
-        auto widget_id = typeid(WidgetType).hash_code();
+        auto widget_id    = typeid(WidgetType).hash_code();
         if (widget_map_.find(widget_id) == widget_map_.end())
         {
             qDebug() << "spawning widget:" << widget_id;
@@ -31,7 +31,7 @@ public:
     }
 
 protected:
-    WidgetSingleton() { }
+    WidgetSingleton() {}
 
     static WidgetSingleton& Instance()
     {

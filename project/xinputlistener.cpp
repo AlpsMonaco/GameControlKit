@@ -6,7 +6,7 @@ XInputListener::XInputListener(XInputIndex index, unsigned long long sample_ms)
     : sample_ms_(sample_ms),
       index_(index),
       is_stop_(false),
-      state_({ 0, { 0, 0, 0, 0, 0, 0, 0 } }),
+      state_({0, {0, 0, 0, 0, 0, 0, 0}}),
       last_packet_number_(DWORD(~0)),
       handler_thread_(),
       handler_(nullptr)

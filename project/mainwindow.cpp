@@ -69,7 +69,6 @@ void MainWindow::OpenFileDialog()
 
 void MainWindow::OpenKeyboardMonitor()
 {
-
     auto widget = WidgetSingleton::GetWidget<KeyboardMonitorWidget>();
     widget->showNormal();
     widget->activateWindow();

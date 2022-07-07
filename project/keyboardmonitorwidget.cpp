@@ -1,8 +1,7 @@
 #include "keyboardmonitorwidget.h"
 #include "ui_keyboardmonitorwidget.h"
 
-KeyboardMonitorWidget::KeyboardMonitorWidget(QWidget* parent)
-    : QWidget(parent),
+KeyboardMonitorWidget::KeyboardMonitorWidget(QWidget* parent): QWidget(parent),
       ui(new Ui::KeyboardMonitorWidget)
 {
     ui->setupUi(this);

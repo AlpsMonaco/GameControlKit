@@ -13,10 +13,10 @@ namespace controlkit
     class XInputListener
     {
     public:
-        using XInputState = XINPUT_STATE;
-        using XInputIndex = DWORD;
+        using XInputState   = XINPUT_STATE;
+        using XInputIndex   = DWORD;
         using XInputGamepad = XINPUT_GAMEPAD;
-        using Handler = std::function<void(const XInputGamepad&)>;
+        using Handler       = std::function<void(const XInputGamepad&)>;
 
         XInputListener(XInputIndex index, unsigned long long sample_ms = 10);
         void SetHandler(const Handler& handler);
@@ -33,6 +33,6 @@ namespace controlkit
         std::thread handler_thread_;
         Handler handler_;
     };
-}
+} // namespace controlkit
 
 #endif // XINPUTLISTENER_H

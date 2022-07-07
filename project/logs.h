@@ -11,6 +11,6 @@ namespace controlkit
     public:
         inline static void Error(const std::string& err) { std::cout << err << std::endl; }
     };
-}
+} // namespace controlkit
 
 #endif // _GAME_CONTROL_KIT_LOGS_H

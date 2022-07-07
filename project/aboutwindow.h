@@ -3,7 +3,8 @@
 
 #include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
     class AboutWindow;
 }
 
@@ -16,7 +17,7 @@ public:
     ~AboutWindow();
 
 private:
-    Ui::AboutWindow *ui;
+    Ui::AboutWindow* ui;
 };
 
 #endif // ABOUTWINDOW_H

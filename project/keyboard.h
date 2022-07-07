@@ -11,11 +11,11 @@ namespace controlkit
     class KeyboardHandler
     {
     public:
-        using KeyCode = DWORD;
+        using KeyCode  = DWORD;
         using KeyState = WPARAM;
-        using Handler = std::function<bool(KeyCode, KeyState)>;
+        using Handler  = std::function<bool(KeyCode, KeyState)>;
 
-        static constexpr KeyState KeyPressed = 256;
+        static constexpr KeyState KeyPressed  = 256;
         static constexpr KeyState KeyReleased = 257;
 
         static void Start();
@@ -27,6 +27,6 @@ namespace controlkit
         static Handler handler_;
         static HHOOK hook_;
     };
-}
+} // namespace controlkit
 
 #endif // KEYBOARD_H

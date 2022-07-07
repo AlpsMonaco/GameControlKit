@@ -3,7 +3,7 @@
 #include <QApplication>
 #include <QSharedMemory>
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QSharedMemory shared_memory("GameControlKit");
     if (shared_memory.attach())

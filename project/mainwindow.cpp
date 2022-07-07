@@ -75,6 +75,4 @@ void MainWindow::OpenKeyboardMonitor()
     widget->activateWindow();
 }
 
-void MainWindow::OpenControllerMonitor()
-{
-}
+void MainWindow::OpenControllerMonitor() {}

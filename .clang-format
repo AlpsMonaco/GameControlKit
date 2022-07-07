@@ -23,7 +23,6 @@ ReflowComments: true
 AlignConsecutiveAssignments: true
 AlignTrailingComments: true
 AlignAfterOpenBracket: Align
-ConstructorInitializerAllOnOneLineOrOnePerLine: false
 BinPackArguments: true
 BinPackParameters: true
 AlwaysBreakAfterReturnType: None

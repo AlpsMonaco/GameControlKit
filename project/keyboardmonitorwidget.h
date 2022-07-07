@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "widgetsingleton.h"
+#include "keyboard.h"
 
 namespace Ui
 {
@@ -23,6 +24,8 @@ signals:
 private:
     Ui::KeyboardMonitorWidget* ui;
     WidgetSingleton::Item<KeyboardMonitorWidget> item_;
+
+    void RegisterKeyboardEvent();
 };
 
 #endif // KEYBOARDMONITORWIDGET_H

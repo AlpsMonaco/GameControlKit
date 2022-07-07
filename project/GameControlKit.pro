@@ -18,6 +18,7 @@ SOURCES += \
     xinputlistener.cpp
 
 HEADERS += \
+    keyboard_handler_enum.h \
     widgetkeeper.h \
     aboutwindow.h \
     keyboard.h \

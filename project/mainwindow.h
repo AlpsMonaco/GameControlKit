@@ -29,5 +29,7 @@ private slots:
 
 private:
     Ui::MainWindow* ui;
+
+    void InitKeyboardEvent();
 };
 #endif // MAINWINDOW_H

@@ -21,11 +21,16 @@ public:
 signals:
     void AppendText(const QString& text);
 
+private slots:
+    void OnAppendText(const QString& text);
+
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+    void RegisterKeyboardEvent();
+
 private:
     Ui::KeyboardMonitorWidget* ui;
     WidgetSingleton::Item<KeyboardMonitorWidget> item_;
-
-    void RegisterKeyboardEvent();
 };
 
 #endif // KEYBOARDMONITORWIDGET_H

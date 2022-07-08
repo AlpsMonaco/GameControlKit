@@ -27,7 +27,7 @@
     <number>5</number>
    </property>
    <item row="0" column="0">
-    <widget class="QPlainTextEdit" name="keyboard_monitor_text_">
+    <widget class="QTextBrowser" name="keyboard_monitor_text_">
      <property name="styleSheet">
       <string notr="true">border:none</string>
      </property>
@@ -39,9 +39,6 @@
      </property>
      <property name="verticalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOn</enum>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
      </property>
     </widget>
    </item>

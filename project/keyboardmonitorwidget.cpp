@@ -1,6 +1,8 @@
 #include "keyboardmonitorwidget.h"
 #include "ui_keyboardmonitorwidget.h"
 #include <QScrollBar>
+#include <QEvent>
+#include <QKeyEvent>
 
 using namespace controlkit;
 
@@ -9,9 +11,11 @@ KeyboardMonitorWidget::KeyboardMonitorWidget(QWidget* parent)
       ui(new Ui::KeyboardMonitorWidget)
 {
     ui->setupUi(this);
+    ui->keyboard_monitor_text_->installEventFilter(this);
+    ui->keyboard_monitor_text_->document()->setMaximumBlockCount(1000);
     setAttribute(Qt::WA_DeleteOnClose);
     connect(this, &KeyboardMonitorWidget::AppendText,
-            ui->keyboard_monitor_text_, &QPlainTextEdit::appendPlainText);
+            this, &KeyboardMonitorWidget::OnAppendText);
     RegisterKeyboardEvent();
     setFocusPolicy(Qt::NoFocus);
 }
@@ -22,6 +26,7 @@ KeyboardMonitorWidget::~KeyboardMonitorWidget()
     delete ui;
 }
 
+void KeyboardMonitorWidget::OnAppendText(const QString& string) { ui->keyboard_monitor_text_->append(string); }
 void KeyboardMonitorWidget::RegisterKeyboardEvent()
 {
     using KeyCode  = KeyboardListener::KeyCode;
@@ -29,10 +34,6 @@ void KeyboardMonitorWidget::RegisterKeyboardEvent()
     KeyboardListener::RegisterHandler(KeyboardHandlerEnum::kKeyboardMonitor,
                                       [&](KeyCode key_code, KeyState key_state) -> bool
                                       {
-                                          ui->keyboard_monitor_text_->
-                                          verticalScrollBar()->
-                                          setValue(
-                                            ui->keyboard_monitor_text_->verticalScrollBar()->maximum());
                                           static QString string;
                                           const static QString pressed_string  = "按下";
                                           const static QString released_string = "放开";
@@ -43,4 +44,16 @@ void KeyboardMonitorWidget::RegisterKeyboardEvent()
                                           emit AppendText(string);
                                           return true;
                                       });
+}
+
+bool KeyboardMonitorWidget::eventFilter(QObject* object, QEvent* event)
+{
+    qDebug() << event->type();
+    if (event->type() == QEvent::KeyPress)
+    {
+        QKeyEvent* key_event = static_cast<QKeyEvent*>(event);
+        qDebug() << key_event->key();
+        return true;
+    }
+    return QWidget::eventFilter(object, event);
 }

@@ -17,6 +17,8 @@ namespace controlkit
         using XInputIndex   = DWORD;
         using XInputGamepad = XINPUT_GAMEPAD;
         using Handler       = std::function<void(const XInputGamepad&)>;
+        using SampleTime    = unsigned long long;
+        using PacketNumber  = DWORD;
 
         XInputListener(XInputIndex index, unsigned long long sample_ms = 10);
         void SetHandler(const Handler& handler);
@@ -25,11 +27,11 @@ namespace controlkit
         void Wait();
 
     protected:
-        unsigned long long sample_ms_;
+        SampleTime sample_ms_;
         XInputIndex index_;
         bool is_stop_;
         XInputState state_;
-        DWORD last_packet_number_;
+        PacketNumber last_packet_number_;
         std::thread handler_thread_;
         Handler handler_;
     };
